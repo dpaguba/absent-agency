@@ -3,7 +3,7 @@ window.addEventListener('scroll', function () {
     // Get the current scroll position
     let scrollPosition = window.scrollY;
 
-    console.log(scrollPosition);
+    // console.log(scrollPosition);
 
 
     // Calculate the percentage of the scroll
@@ -57,3 +57,20 @@ window.addEventListener('scroll', function () {
         }
     });
 });
+
+
+
+function adjustScrollContainerHeight() {
+    const logo = document.querySelector('.logo');
+    const scrollContainer = document.querySelector('.scroll-container');
+
+    scrollContainer.style.height = logo.offsetHeight + 'px';
+}
+
+window.addEventListener('load', adjustScrollContainerHeight);
+window.addEventListener('resize', adjustScrollContainerHeight);
+
+function resetScrollPosition() {
+    window.scrollTo(0, 0);
+}
+window.onload = resetScrollPosition;

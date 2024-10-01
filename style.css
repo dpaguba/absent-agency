@@ -41,78 +41,115 @@ body {
   animation: fade-up 1.5s ease;
 }
 
-.grid-item__start{
-    justify-content: flex-start;
-    align-items: flex-start;
+.grid-item__start {
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.grid-item__end{
-    justify-content: flex-end;
-    align-items: flex-start;
+.grid-item__end {
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .grid-item__right-bottom {
-    justify-content: center; 
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-item__left-bottom {
-    justify-content: flex-start;
-    align-items: center;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .grid-item__motto,
 .grid-item__about,
 .grid-item__social-links,
 .grid-item__copyright,
-.grid-item__links{
-    position: fixed;
-    font-weight: var(--font-weight-normal);
-    font-size: var(--font-size-base);
+.grid-item__links {
+  position: fixed;
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-base);
 }
 
 .grid-item__social-links,
-.grid-item__links{
-    list-style: none;
-    display: flex;
-    gap: var(--spacing);
+.grid-item__links {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing);
 }
 
-.grid-item__links{
-    display: block;
+.grid-item__links {
+  display: block;
 }
 
 .grid-item__social-links a,
 .grid-item__links a {
-    text-decoration: underline;
-    color: var(--primary-color);
+  text-decoration: underline;
+  color: var(--primary-color);
 }
-.nl { display: block; }
+
+.nl {
+  display: block;
+}
 
 .logo {
   position: fixed;
+  padding: 0 20px;
   bottom: 10px;
-  left: 10px;
-  width: 98%;
+  left: 0;
+  width: 100%;
   z-index: -1;
 }
 
-.skip { height: 150vh; }
-
-.case-study { margin-top: var(--spacing); }
-
-.case {
-  opacity: 0;
-  transition: opacity 0.5s ease, clip-path 0.5s ease;
+.skip {
+  height: 150vh;
 }
 
-.case.visible { opacity: 1; }
+.case-study {
+  margin-top: var(--spacing);
+}
 
-.center { align-items: center; }
-.center-flat { align-items: flex-end; justify-content: center; }
-.right { align-items: flex-end; margin-left: var(--spacing); }
-.right-center { align-items: flex-end; margin-right: var(--spacing); }
-.left { align-items: flex-end; }
+.case {
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0 ease, clip-path 0 ease;
+}
+
+.case.visible {
+  opacity: 1;
+}
+
+/* .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.center-flat {
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.right {
+  align-items: flex-end;
+  margin-left: var(--spacing);
+}
+
+.right-center {
+  align-items: flex-end;
+  margin-right: var(--spacing);
+}
+
+.left {
+  align-items: flex-end;
+}
+
+/* .case-study {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
 
 .case-study__info {
   text-align: left;
@@ -131,45 +168,73 @@ body {
   position: fixed;
   bottom: 10px;
   left: 20px;
-  width: 91%;
-  height: 5px;
+  width: 90%;
+  height: auto;
+
 }
 
 .scroll-bar {
   height: 100%;
-  background-color: var(--primary-color);
+  background-color: black;
   width: 0%;
   transition: width 0.3s ease;
 }
 
 .case-study__image {
-  max-width: 50%;
+  width: 35%;
   height: auto;
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
 
-.case-study__image:hover { opacity: 0.8; }
+
+*/ .case-study__image:hover {
+  opacity: 0.8;
+}
 
 @keyframes fade-up {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  body { padding: 20px; }
-  
+  body {
+    padding: 20px;
+  }
+
   .main {
     grid-template-columns: 1fr;
     gap: var(--spacing);
   }
 
-  .case-study__image { max-width: 100%; }
+  .case-study__image {
+    max-width: 100%;
+  }
 
-  .center-flat .case-study__info { margin-left: 0; }
+  .center-flat .case-study__info {
+    margin-left: 0;
+  }
 
-  .right, .right-center {
+  .right,
+  .right-center {
     margin: 0;
     align-items: center;
   }
 }
+
+/* 
+
+scroll size
+2300 - 91
+1500 - 90
+1100 - 89
+850 - 87
+660 - 84
+480 - 82
+420 - 83
+*/
