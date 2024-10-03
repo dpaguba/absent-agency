@@ -1,20 +1,20 @@
+// window.addEventListener('scroll', function () {
+
+//     // Get the current scroll position
+//     // let scrollPosition = window.scrollY;
+
+//     // console.log(scrollPosition);
+
+
+//     // Calculate the percentage of the scroll
+//     let scrollPercent = (scrollPosition / window.innerHeight) * 100 > 100 ? 100 : (scrollPosition / this.window.innerHeight) * 100;
+
+//     // Set the width of the scroll-bar to the scroll percentage
+//     document.querySelector('.logo-bg').style.width = `${scrollPercent}%`;
+// });
+
 window.addEventListener('scroll', function () {
-
-    // Get the current scroll position
-    let scrollPosition = window.scrollY;
-
-    // console.log(scrollPosition);
-
-
-    // Calculate the percentage of the scroll
-    let scrollPercent = (scrollPosition / window.innerHeight) * 100 > 100 ? 100 : (scrollPosition / this.window.innerHeight) * 100;
-
-    // Set the width of the scroll-bar to the scroll percentage
-    document.querySelector('.scroll-bar').style.width = `${scrollPercent}%`;
-});
-
-window.addEventListener('scroll', function () {
-    const cases = document.querySelectorAll('.case');
+    const cases = document.querySelectorAll('.case-study__wrapper');
     const bottomLimit = window.innerHeight - 10; // 20px от нижней части экрана
 
     cases.forEach(caseItem => {
@@ -60,17 +60,64 @@ window.addEventListener('scroll', function () {
 
 
 
-function adjustScrollContainerHeight() {
+// function adjustScrollContainerHeight() {
+//     const logo = document.querySelector('.logo');
+//     const scrollContainer = document.querySelector('.logo-container');
+
+//     scrollContainer.style.height = logo.offsetHeight + 'px';
+// }
+
+// window.addEventListener('load', adjustScrollContainerHeight);
+// window.addEventListener('resize', adjustScrollContainerHeight);
+
+// function resetScrollPosition() {
+//     window.scrollTo(0, 0);
+// }
+// window.onload = resetScrollPosition;
+
+
+
+
+window.addEventListener('scroll', () => {
+
+    const blackBlock = document.querySelector('.logo-bg');
     const logo = document.querySelector('.logo');
-    const scrollContainer = document.querySelector('.scroll-container');
+    blackBlock.style.height = `${logo.offsetHeight}px`;
 
-    scrollContainer.style.height = logo.offsetHeight + 'px';
-}
+    let scrollPosition = window.scrollY;
 
-window.addEventListener('load', adjustScrollContainerHeight);
-window.addEventListener('resize', adjustScrollContainerHeight);
+    let scrollPercent = (scrollPosition / window.innerHeight) * 100 > 100 ? 100 : (scrollPosition / this.window.innerHeight) * 100;
 
-function resetScrollPosition() {
-    window.scrollTo(0, 0);
-}
-window.onload = resetScrollPosition;
+
+
+
+    document.querySelector('.logo-bg').style.width = `${scrollPercent}%`;
+
+
+
+    // let maxWidth = logo.offsetWidth - (logo.offsetWidth * 0.089);
+    // blackBlock.style.right = logo.offsetWidth * 0.089 + 'px';
+
+    // let scrollPercent = (scrollPosition / window.innerHeight) > maxWidth ? maxWidth : (scrollPosition / this.window.innerHeight) * 100;
+    // document.querySelector('.logo-bg').style.width = `${scrollPercent}%`;
+
+
+    // blackBlock.style.width = '90%';
+
+
+    // if (window.innerWidth < 820) {
+    //     blackBlock.style.right = logo.offsetWidth * 0.09 + 'px';
+    // }
+
+
+
+    // const scrollPosition = window.scrollY;
+    // const viewportHeight = window.innerHeight;
+
+    // if (scrollPosition >= viewportHeight) {
+    //     blackBlock.style.width = '90%';
+    // } else {
+    //     const progress = (scrollPosition / viewportHeight) * 100;
+    //     blackBlock.style.width = `${progress}%`;
+    // }
+});
