@@ -329,10 +329,6 @@ body {
     max-width: 89%;
   }
 
-  .grid-item__social-links {
-    font-size: var(--font-size-small);
-  }
-
 }
 
 @media screen and (max-width: 760px) {
