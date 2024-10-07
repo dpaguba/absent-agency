@@ -39,7 +39,7 @@ body {
 }
 
 .case-study {
-  padding: 0 125px;
+  padding: 0 10%;
   z-index: 1;
   width: 100%;
 }
@@ -165,7 +165,7 @@ body {
   }
 
   .case-study {
-    padding: 0;
+    padding: 15%;
   }
 
   .case-study__info,
@@ -212,13 +212,21 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   gap: 5%;
-  z-index: -1;
+}
+
+.grid-item__hiddden {
+  display: none;
+}
+
+.grid-item__hiddden-text {
+  display: none;
 }
 
 .grid-item,
 .grid-item__end,
 .grid-item__right-bottom,
-.grid-item__left-bottom {
+.grid-item__left-bottom,
+.grid-item__hiddden {
   display: flex;
   animation: fade-up 1.5s ease;
 }
@@ -266,6 +274,7 @@ body {
 
 .grid-item__social-links a,
 .grid-item__links a {
+  cursor: pointer;
   text-decoration: underline;
   color: var(--primary-color);
 }
@@ -300,47 +309,9 @@ body {
   z-index: 1;
 }
 
-/* .logo-bg {
-  display: block;
-  position: absolute;
-  bottom: 10px;
-  right: 0;
-  width: 100%;
-  height: auto;
-  background-color: black;
-  z-index: 1;
-}
-
-
-.logo {
-  display: block;
-  position: absolute;
-  padding: 0 20px;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-} */
-
 .skip {
   height: 150vh;
 }
-
-/* .logo-container {
-  position: fixed;
-  bottom: 10px;
-  left: 20px;
-  width: 90%;
-  height: auto;
-
-} */
-
-/* .logo-bar {
-  height: 100%;
-  background-color: black;
-  width: 0%;
-  transition: width 0.3s ease;
-} */
 
 @keyframes fade-up {
   from {
@@ -352,22 +323,65 @@ body {
   }
 }
 
-/* improve positioning  */
-@media screen and (max-width: 820px) {
-  .empty {
+@media screen and (max-width: 1024px) {
+  .logo-bg {
+    right: 10%;
+    max-width: 89%;
+  }
+
+  .grid-item__social-links {
+    font-size: var(--font-size-small);
+  }
+
+}
+
+@media screen and (max-width: 760px) {
+  .grid-item__social-links {
+    display: block;
+    font-size: var(--font-size-base);
+  }
+
+  .empty,
+  .grid-item__end,
+  .grid-item__right-bottom {
+    display: none;
+  }
+
+  .grid-item__start,
+  .grid-item__left-bottom {
     display: none;
   }
 
 
+  .grid-item__hidden,
+  .grid-item__hiddden-text {
+    display: block;
+  }
 
-  .main {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
+
+  .grid-item__hiddden-text {
+    padding-right: 50px;
+    font-size: 20px;
+    position: fixed;
+  }
+
+
+  .logo-bg {
+    right: 11%;
+    max-width: 88%;
   }
 }
 
+@media screen and (max-width: 550px) {
+  .logo-bg {
+    right: 12%;
+    max-width: 87%;
+  }
+}
 
-
-
-/* scroll size 2300 - 91 1500 - 90 1100 - 89 850 - 87 660 - 84 480 - 82 420 - 83  */
+@media screen and (max-width: 440px) {
+  .logo-bg {
+    right: 13%;
+    max-width: 86%;
+  }
+}
