@@ -7,7 +7,7 @@ This repository contains the source code for my interpretation of the [Absent Ag
 The Absent Agency website is a sleek, modern single-page application that showcases the studio's work and philosophy.
 
 
-https://github.com/user-attachments/assets/f6b6aaa9-774d-4aba-87c9-1ecaaa6174bb
+https://github.com/user-attachments/assets/80828f3f-40ea-43e8-b62d-0a66c36e7055
 
 
 
